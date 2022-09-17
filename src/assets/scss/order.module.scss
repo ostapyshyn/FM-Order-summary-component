@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 main {
   max-width: 450px;
   text-align: center;
@@ -6,9 +8,17 @@ main {
   border-radius: 20px;
   overflow: hidden;
 
+  article {
+    padding-inline: 48px;
+
+    @include mq(445px) {
+      padding-inline: 24px;
+    }
+  }
+
   svg {
     max-width: 100%;
-    margin-bottom: 45px;
+    margin-bottom: 44px;
   }
 
   h1 {
@@ -17,6 +27,112 @@ main {
     font-size: 28px;
     line-height: 37px;
     color: var(--dark-blue);
-    margin-bottom: 17px;
+    margin-bottom: 16px;
+  }
+
+  .plan {
+    padding: 25px;
+
+    .plan_price {
+      display: flex;
+
+      @include mq(370px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    background-color: var(--very-pale-blue);
+    margin-bottom: 32px;
+    border-radius: 11px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      margin-bottom: 0;
+      margin-right: 20px;
+      min-width: 48px;
+    }
+
+    @include mq(370px) {
+      flex-direction: column;
+    }
+
+    .annual_price {
+      display: flex;
+      flex-direction: column;
+
+      .annual {
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 21px;
+        color: var(--dark-blue);
+        margin-bottom: 6px;
+      }
+      .price {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        color: var(--desaturated-blue);
+      }
+    }
+
+    .change {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 19px;
+      text-decoration-line: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 2px;
+      color: var(--bright-blue);
+
+      &:hover {
+        color: var(--back);
+      }
+    }
+  }
+
+  .info {
+    font-family: 'Red Hat Display';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--desaturated-blue);
+    margin-bottom: 20px;
+  }
+
+  button {
+    background: var(--bright-blue);
+    box-shadow: 0px 20px 20px rgba(56, 42, 225, 0.190291);
+    border-radius: 11px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 15px;
+    width: 100%;
+    border: none;
+    padding-block: 16px;
+    line-height: 20px;
+    color: #ffffff;
+
+    &:hover {
+      background-color: var(--back);
+    }
+  }
+
+  .cancel {
+    display: block;
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--desaturated-blue);
+    margin-bottom: 45px;
+    text-decoration: none;
+    &:hover {
+      color: var(--dark-blue);
+    }
   }
 }

@@ -7,10 +7,16 @@
   /* transition: all 0.2s ease-in-out; */
 }
 
+@mixin mq($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
 :root {
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
-
+  --back: hsla(245, 83%, 68%, 1);
   --very-pale-blue: hsl(225, 100%, 98%);
   --desaturated-blue: hsl(224, 23%, 55%);
   --dark-blue: hsl(223, 47%, 23%);
@@ -22,10 +28,18 @@ body {
   font-size: 16px;
   padding-inline: 24px;
   background-color: var(--pale-blue);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: url(assets/svg/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include mq(445px) {
+    background-image: url(assets/svg/pattern-background-mobile.svg);
+  }
 }
 
 code {
